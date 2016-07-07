@@ -66,7 +66,7 @@ bio.display = function() {
 
     // loop thru Skills under Contacts section
 
-    bio.skills.forEach( function(skill) {
+    bio.skills.forEach(function(skill) {
         var formattedSkills = HTMLskills.replace("%data%", skill);
         $("#header").append(formattedSkills);
     });
@@ -111,7 +111,7 @@ var education = {
         url: 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
     }]
 };
-    
+
 education.display = function() {
 
     $("#education").append(HTMLschoolStart);
@@ -193,7 +193,7 @@ var work = {
         description: 'Development of sparse solvers for Finite Element Analysis software using Fortran and C++. Various calculations for aircraft engine design using commercial software ANSYS and MARC: rotor limit load analysis, superplastic forming of blades. Foundation for PhD in Numerical Stability Analysis and Optimization of Turbine Blades. '
     }]
 };
-    
+
 work.display = function() {
 
     work.jobs.forEach(function(job) {
@@ -241,31 +241,31 @@ var projects = {
         images: ['images/NN.svg']
     }]
 };
-    
+
 projects.display = function() {
 
-        projects.projects.forEach(function(project) {
-            $("#projects").append(HTMLprojectStart);
+    projects.projects.forEach(function(project) {
+        $("#projects").append(HTMLprojectStart);
 
-            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
-            var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
-            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
-            var formattedProjectImage = HTMLprojectImage.replace("%data%", project.images);
-            var projectsURL = project.url;
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
+        var formattedProjectImage = HTMLprojectImage.replace("%data%", project.images);
+        var projectsURL = project.url;
 
-            // Make Project Title a clickable link
-            var formattedProjectTitle = formattedProjectTitle.replace("#", projectsURL);
+        // Make Project Title a clickable link
+        var formattedProjectTitle = formattedProjectTitle.replace("#", projectsURL);
 
-            // create projects array to loop over
-            var projectsArray = [];
-            projectsArray.push(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
-            var projectsLength = projectsArray.length;
+        // create projects array to loop over
+        var projectsArray = [];
+        projectsArray.push(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
+        var projectsLength = projectsArray.length;
 
-            // loop over projects array
-            for (var i = 0; i < projectsLength; i++) {
-                $(".project-entry:last").append(projectsArray[i]);
-            }
-        });
+        // loop over projects array
+        for (var i = 0; i < projectsLength; i++) {
+            $(".project-entry:last").append(projectsArray[i]);
+        }
+    });
 };
 
 var map = {
